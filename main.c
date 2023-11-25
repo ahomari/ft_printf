@@ -2,6 +2,6 @@
 
 int main(void)
 {
-	char str[] = "ahmed";
-	ft_printf("%s", str);
+	int i = 15000;
+	ft_printf("%x", i);
 }
