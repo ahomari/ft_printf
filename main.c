@@ -1,7 +1,10 @@
 #include "libftprintf.h"
+#include <stdio.h>
 
 int main(void)
 {
-	int i = 15000;
-	ft_printf("%x", i);
+	char *str = NULL;
+	ft_printf("%s", str);
+	// printf("\n%s", str);
+
 }

@@ -12,16 +12,20 @@
 
 #include "libftprintf.h"
 
-void	ft_hexa_putnbr(unsigned int nbr, int *count)
+void	ft_hexa_putnbr(unsigned int nbr, const char format, int *count)
 {
 	char *base;
 
-	base = "0123456789abcedf";
+	if (format == 'x')
+		base = "0123456789abcdef";
+	else
+		base = "0123456789ABCDEF";
+	
 	if (nbr >= 0 && nbr <= 15)
 		ft_putchar(base[nbr], count);
 	else
 	{
-		ft_hexa_putnbr(nbr / 16, count);
-		ft_hexa_putnbr(nbr % 16, count);
+		ft_hexa_putnbr(nbr / 16, format, count);
+		ft_hexa_putnbr(nbr % 16, format, count);
 	}
 }

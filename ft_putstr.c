@@ -17,7 +17,9 @@ void	ft_putstr(char *str, int *count)
 	int	i;
 
 	i = 0;
-	while (str[i])
+	if (str == NULL)
+		write(1, "(null)", 6);
+	while (str)
 	{
 		ft_putchar(str[i], count);
 		i++;

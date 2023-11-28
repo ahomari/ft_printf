@@ -19,8 +19,11 @@
 int		ft_printf(const char *format, ...);
 void	ft_putchar(char c, int *count);
 void	ft_putstr(char *str, int *count);
+void	ft_putnbr(int nbr, int *count);
 void	ft_unsigned_putnbr(unsigned int nbr, int *count);
-void	ft_hexa_putnbr(unsigned int nbr, int *count);
+void	ft_hexa_putnbr(unsigned int nbr, const char format, int *count);
+void    ft_put_p(void *p, int *count);
+
 
 
 

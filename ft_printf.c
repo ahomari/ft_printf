@@ -12,12 +12,18 @@
 
 #include "libftprintf.h"
 
-void	ft_format(va_list ap, int *count, const char format)
+static void	ft_format(va_list ap, int *count, const char format)
 {
 	if (format == 's')
 		ft_putstr(va_arg(ap, char *), count);
-	else if (format == 'x')
-		ft_hexa_putnbr(va_arg(ap, unsigned int), count);
+	else if (format == 'c')
+		ft_putchar((char)va_arg(ap, int), count);
+	else if (format == 'x' || format == 'X')
+		ft_hexa_putnbr(va_arg(ap, unsigned int), format, count);
+	else if (format == 'd' || format == 'i')
+		ft_putnbr(va_arg(ap, int), count);
+	else if (format == 'p')
+		ft_put_p(va_arg(ap, void *), count);
 	
 }
 
