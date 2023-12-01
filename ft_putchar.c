@@ -6,11 +6,11 @@
 /*   By: ahomari <ahomari@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/23 16:28:26 by ahomari           #+#    #+#             */
-/*   Updated: 2023/11/25 11:19:22 by ahomari          ###   ########.fr       */
+/*   Updated: 2023/11/28 18:28:48 by ahomari          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
+#include "ft_printf.h"
 
 void	ft_putchar(char c, int *count)
 {
