@@ -6,7 +6,7 @@
 /*   By: ahomari <ahomari@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/19 18:40:10 by ahomari           #+#    #+#             */
-/*   Updated: 2023/11/30 11:02:05 by ahomari          ###   ########.fr       */
+/*   Updated: 2023/12/02 20:31:49 by ahomari          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,13 +17,13 @@ static void	ft_format(va_list ap, int *count, const char format)
 	if (format == '%')
 		ft_putchar(format, count);
 	else if (format == 'c')
-		ft_putchar((char)va_arg(ap, int), count);
+		ft_putchar(va_arg(ap, int), count);
 	else if (format == 's')
 		ft_putstr(va_arg(ap, char *), count);
 	else if (format == 'd' || format == 'i')
-		ft_putnbr(va_arg(ap, int), count);
+		ft_putnbr_long(va_arg(ap, int), count);
 	else if (format == 'u')
-		ft_unsigned_putnbr(va_arg(ap, unsigned int), count);
+		ft_putnbr_long(va_arg(ap, unsigned int), count);
 	else if (format == 'x' || format == 'X')
 		ft_hexa_putnbr(va_arg(ap, unsigned int), format, count);
 	else if (format == 'p')
@@ -56,5 +56,6 @@ int	ft_printf(const char *format, ...)
 			ft_putchar(format[i], &count);
 		i++;
 	}
+	va_end(ap);
 	return (count);
 }

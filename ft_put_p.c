@@ -6,7 +6,7 @@
 /*   By: ahomari <ahomari@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/28 10:56:46 by ahomari           #+#    #+#             */
-/*   Updated: 2023/11/30 15:46:33 by ahomari          ###   ########.fr       */
+/*   Updated: 2023/12/02 20:45:57 by ahomari          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,10 +28,9 @@ static void	ft_hexa_p(unsigned long nbr, int *count)
 
 void	ft_put_p(void *p, int *count)
 {
-	unsigned long int	ptr;
+	unsigned long	ptr;
 
-	ptr = (unsigned long int)p;
-	ft_putchar('0', count);
-	ft_putchar('x', count);
+	ptr = (unsigned long)p;
+	ft_putstr("0x", count);
 	ft_hexa_p(ptr, count);
 }
